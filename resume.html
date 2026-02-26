@@ -35,15 +35,26 @@
 
 <section class="py-3">
   <h1 class="h2">Resume</h1>
-  <p class="text-secondary">Download or view inline. Place your PDF at <code>/resume/Swechha_Pandey_Resume.pdf</code> in this repository.</p>
+  <p class="text-secondary">Download or view inline. Add your PDF named <code>Swechha_Pandey_Resume.pdf</code> to the root of this repository.</p>
   <div class="d-flex gap-2 mb-3">
-    <a class="btn btn-primary" href="/resume/Swechha_Pandey_Resume.pdf" download>Download PDF</a>
-    <a class="btn btn-outline-secondary" href="/resume/Swechha_Pandey_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+    <a class="btn btn-primary" href="Swechha_Pandey_Resume.pdf" download>Download PDF</a>
+    <a class="btn btn-outline-secondary" href="Swechha_Pandey_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
   </div>
   <div class="ratio ratio-4x3 border rounded-3">
-    <iframe src="/resume/Swechha_Pandey_Resume.pdf" title="Resume PDF" loading="lazy"></iframe>
+    <iframe id="resume-frame" src="Swechha_Pandey_Resume.pdf" title="Resume PDF" loading="lazy"></iframe>
+  </div>
+  <div id="resume-missing" class="alert alert-warning mt-3 d-none">
+    Resume PDF not found. Please add <code>Swechha_Pandey_Resume.pdf</code> to the root of your repository.
   </div>
 </section>
+<script>
+  (function(){
+    var frame = document.getElementById('resume-frame');
+    frame.addEventListener('error', function(){
+      document.getElementById('resume-missing').classList.remove('d-none');
+    });
+  })();
+</script>
 
   </main>
   <footer class="text-center text-muted py-4">
