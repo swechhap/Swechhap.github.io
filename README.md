@@ -7,10 +7,10 @@ Multi-page static site (Home, Projects, Resume, Contact) with:
 - 🧠 Projects page shows live GitHub data for selected repos, adds stack badges (Python, pytest, Kubernetes, AWS), topic chips, and sorting (updated/stars). AI/ML repos are grouped automatically by topics (ai/ml/machine-learning/nlp/mlops/llm).
 
 ## Deploy
-1. Repo: `swechha.github.io` (user site)
+1. Repo: `swechhap.github.io` (user site)
 2. Copy all files to the repo root (keep folder structure).
 3. Put your resume PDF at `resume/Swechha_Pandey_Resume.pdf`.
-4. Commit & push. Site: https://swechha.github.io
+4. Commit & push. Site: https://swechhap.github.io
 
 ## Configure
 - Change target repos in `assets/js/projects.js` → `TARGET_REPOS`.
