@@ -1,0 +1,54 @@
+
+:root {
+  --sp-bg: #ffffff;
+  --sp-fg: #111827;
+  --sp-muted: #6b7280;
+  /* default accent (indigo) */
+  --accent-500: #4f46e5;
+  --accent-600: #4338ca;
+  --accent-50: #eef2ff;
+}
+:root[data-theme='dark']{
+  --sp-bg: #0b1220;
+  --sp-fg: #e5e7eb;
+  --sp-muted: #9ca3af;
+  --accent-50: #1b1f3a;
+}
+:root[data-accent='violet']{
+  --accent-500: #7c3aed;
+  --accent-600: #6d28d9;
+  --accent-50: #f5f3ff;
+}
+:root[data-accent='emerald']{
+  --accent-500: #059669;
+  --accent-600: #047857;
+  --accent-50: #ecfdf5;
+}
+html, body { background: var(--sp-bg); color: var(--sp-fg); }
+.navbar { transition: background .2s; }
+.text-secondary { color: var(--sp-muted) !important; }
+.card { background: color-mix(in oklab, var(--sp-bg) 96%, black); }
+
+/* Accent overrides */
+.btn-primary {
+  --bs-btn-bg: var(--accent-500);
+  --bs-btn-border-color: var(--accent-500);
+  --bs-btn-hover-bg: var(--accent-600);
+  --bs-btn-hover-border-color: var(--accent-600);
+  --bs-btn-active-bg: var(--accent-600);
+  --bs-btn-active-border-color: var(--accent-600);
+}
+.badge-accent {
+  background: var(--accent-50);
+  color: var(--accent-600);
+  border: 1px solid color-mix(in oklab, var(--accent-600) 25%, white);
+}
+.badge-topic {
+  background: transparent;
+  color: var(--sp-fg);
+  border: 1px solid color-mix(in oklab, var(--sp-fg) 25%, var(--sp-bg));
+}
+
+/* Stack badge row spacing */
+.stack-badges .badge { margin-right: .25rem; margin-bottom: .25rem; }
+.topic-badges .badge { margin-right: .25rem; margin-bottom: .25rem; }
