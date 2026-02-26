@@ -33,40 +33,36 @@
   </nav>
   <main class="container" style="padding-top: 80px;">
 
-<section class="py-5 text-center">
-  <h1 class="display-5 fw-bold">AI/ML Test Automation Engineer</h1>
-  <p class="lead text-secondary mt-3">I build scalable testing solutions for ML/NLP systems, Kubernetes microservices, and AWS cloud platforms.</p>
-  <div class="d-flex justify-content-center gap-2 mt-3">
-    <a class="btn btn-primary" href="/projects.html">View Projects</a>
-    <a class="btn btn-outline-secondary" href="/resume.html">Resume</a>
-  </div>
-</section>
-
-<section class="row g-4 align-items-center">
-  <div class="col-md-7">
-    <h2 class="h3">About</h2>
-    <p>
-      I’m <strong>Swechha Pandey</strong>, an SDE specializing in <strong>AI/ML testing</strong>, <strong>cloud-native automation</strong>, and <strong>Kubernetes</strong> orchestration.
-      I design Python-based test frameworks (pytest, Pandas, NumPy, scikit-learn) to validate data pipelines, model behavior, and microservices reliability on <strong>AWS</strong>.
-    </p>
-    <ul>
-      <li>ML/NLP pipeline validation, dataset quality gates, performance & resilience testing</li>
-      <li>Contract & integration tests for microservices; API security testing (OAuth)</li>
-      <li>CI/CD quality gates and automated regression for faster, safer releases</li>
-    </ul>
-  </div>
-  <div class="col-md-5">
-    <div class="p-4 border rounded-3 bg-body-tertiary">
-      <h3 class="h5">Core Stack</h3>
-      <div class="row row-cols-2 g-2 small">
-        <div class="col">Python, pytest</div>
-        <div class="col">Pandas, NumPy</div>
-        <div class="col">scikit-learn, PySpark</div>
-        <div class="col">Docker, Kubernetes</div>
-        <div class="col">AWS (EKS, S3, Lambda)</div>
-        <div class="col">Selenium, Robot Framework</div>
-      </div>
+<section class="py-3">
+  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+    <div>
+      <h1 class="h2 mb-0">Projects</h1>
+      <p class="text-secondary mb-0">Live data pulled from GitHub for repositories: <code>ComponentTest</code>, <code>TestCaseGenerator</code>, <code>TestGenAITool</code>.</p>
     </div>
+    <div class="d-flex align-items-center gap-2">
+      <label for="sortSelect" class="form-label mb-0 small text-secondary">Sort by</label>
+      <select id="sortSelect" class="form-select form-select-sm" style="width:auto;">
+        <option value="updated" selected>Most recently updated</option>
+        <option value="stars">Stars</option>
+      </select>
+    </div>
+  </div>
+
+  <hr class="my-3">
+
+  <h2 class="h5 mt-3 mb-2">AI/ML Testing</h2>
+  <div id="group-aiml" class="row g-4"></div>
+
+  <h2 class="h5 mt-4 mb-2">Automation & Tools</h2>
+  <div id="group-tools" class="row g-4"></div>
+
+  <div id="projects-fallback" class="d-none">
+    <div class="alert alert-warning mt-3">Couldn’t load GitHub data. Showing static links instead.</div>
+    <ul>
+      <li><a href="https://github.com/swechha/ComponentTest" target="_blank" rel="noopener">ComponentTest</a></li>
+      <li><a href="https://github.com/swechha/TestCaseGenerator" target="_blank" rel="noopener">TestCaseGenerator</a></li>
+      <li><a href="https://github.com/swechha/TestGenAITool" target="_blank" rel="noopener">TestGenAITool</a></li>
+    </ul>
   </div>
 </section>
 
