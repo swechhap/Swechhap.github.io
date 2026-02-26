@@ -1,7 +1,7 @@
 
 (function(){
   const HOST = window.location.hostname;
-  const DEFAULT_USER = 'swechha'; // change if your GitHub username differs
+  const DEFAULT_USER = 'swechhap'; // change if your GitHub username differs
   const USER = HOST.endsWith('github.io') ? HOST.split('.')[0] : DEFAULT_USER;
   const TARGET_REPOS = ['ComponentTest','TestCaseGenerator','TestGenAITool'];
 
