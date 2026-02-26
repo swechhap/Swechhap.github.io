@@ -36,9 +36,12 @@
     return { repo, topics, languages };
   }
 
-  function inAiml(topics){
-    const s = topics.join(' ').toLowerCase();
-    return /(ai|ml|machine-learning|mlops|nlp|llm|model|inference)/.test(s);
+  function inAiml(data){
+    const topics = (data.topics || []).join(' ');
+    const name = data.repo.name || '';
+    const desc = data.repo.description || '';
+    const combined = (topics + ' ' + name + ' ' + desc).toLowerCase();
+    return /(ai|ml|machine[-_]?learning|mlops|nlp|llm|model|inference|genai|gen[-_]?ai)/.test(combined);
   }
 
   function stackBadges(){
@@ -89,13 +92,19 @@
 
     groups.aiml.sort(cmp).forEach(d => elAIML.insertAdjacentHTML('beforeend', card(d)));
     groups.tools.sort(cmp).forEach(d => elTools.insertAdjacentHTML('beforeend', card(d)));
+
+    // Hide section headings when the group is empty
+    document.getElementById('heading-aiml').style.display = groups.aiml.length ? '' : 'none';
+    elAIML.style.display = groups.aiml.length ? '' : 'none';
+    document.getElementById('heading-tools').style.display = groups.tools.length ? '' : 'none';
+    elTools.style.display = groups.tools.length ? '' : 'none';
   }
 
   (async function run(){
     try {
       const data = await Promise.all(TARGET_REPOS.map(n => fetchRepo(USER, n)));
       const groups = { aiml: [], tools: [] };
-      data.forEach(d => { (inAiml(d.topics) ? groups.aiml : groups.tools).push(d); });
+      data.forEach(d => { (inAiml(d) ? groups.aiml : groups.tools).push(d); });
       render(groups);
       sortSelect.addEventListener('change', () => render(groups));
     } catch(e) {
